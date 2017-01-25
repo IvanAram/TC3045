@@ -3,11 +3,12 @@
 
 class Insertion : public Ordenamiento{
 public:
-	void ordenarMayorMenor(int*,int);
-	void ordenarMenorMayor(int*,int);
+	Insertion(int _size = 5) : Ordenamiento(_size) {}
+	void ordenarMayorMenor();
+	void ordenarMenorMayor();
 };
 
-void Insertion::ordenarMayorMenor(int* data, int size){
+void Insertion::ordenarMayorMenor(){
 	int tmp,index;
     for(int i=1;i<size;i++){
         tmp = data[i];
@@ -22,9 +23,9 @@ void Insertion::ordenarMayorMenor(int* data, int size){
     }
 }
 
-void Insertion::ordenarMenorMayor(int* data, int size){
+void Insertion::ordenarMenorMayor(){
 	int tmp,index;
-    for(int i=1;i<size;i++){
+    for(int i = 1; i < size; i++){
         tmp = data[i];
         index = i;
         for(int j = i-1; j >= 0; j--){

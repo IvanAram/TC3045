@@ -3,17 +3,20 @@
 
 class BubbleSort : public Ordenamiento{
 public:
-	void ordenarMayorMenor(int*,int);
-	void ordenarMenorMayor(int*,int);
+	BubbleSort(int _size = 5) : Ordenamiento(_size) {}
+	void ordenarMayorMenor();
+	void ordenarMenorMayor();
 };
 
-void BubbleSort::ordenarMayorMenor(int* data, int size){
+void BubbleSort::ordenarMayorMenor(){
 	bool change;
     for(int i = 0; i < size; i++){
         change = false;
         for(int j = 1; j < size-i; j++){
             if(data[j-1] < data[j]){
-                swap(&data[j-1],&data[j]);
+            	int tmp = data[j-1];
+            	data[j-1] = data[j];
+            	data[j] = tmp;
                 change = true;
             }
         }
@@ -21,13 +24,15 @@ void BubbleSort::ordenarMayorMenor(int* data, int size){
     }
 }
 
-void BubbleSort::ordenarMenorMayor(int* data, int size){
+void BubbleSort::ordenarMenorMayor(){
 	bool change;
     for(int i = 0; i < size; i++){
         change = false;
         for(int j = 1; j < size-i; j++){
             if(data[j-1] > data[j]){
-                swap(&data[j-1], &data[j]);
+                int tmp = data[j-1];
+            	data[j-1] = data[j];
+            	data[j] = tmp;
                 change = true;
             }
         }
