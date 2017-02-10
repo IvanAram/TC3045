@@ -11,8 +11,11 @@ public:
     VideoJuego(string nombre, int num_serie, VideoJuego::tipo tipo_juego) : nombre(new string(nombre)), num_serie(new int(num_serie)), tipo_juego(new tipo(tipo_juego)){}
     virtual ~VideoJuego(){
     	delete this->nombre;
+    	nombre = nullptr;
     	delete this->num_serie;
+    	num_serie = nullptr;
     	delete this->tipo_juego;
+    	tipo_juego = nullptr;
     }
     string getName(){
         return *nombre;
@@ -37,12 +40,6 @@ public:
     	this->tipo_juego = new tipo(*other.tipo_juego);	
     }*/
     ~Estrategia(){
-    	delete this->nombre;
-    	nombre = nullptr;
-    	delete this->num_serie;
-    	num_serie = nullptr;
-    	delete this->tipo_juego;
-    	tipo_juego = nullptr;
     	delete this->number_of_players;
     	number_of_players = nullptr;
     }
@@ -59,12 +56,6 @@ public:
         this->rate_category = new string(rate_category);
     }
     ~Aventura(){
-    	delete this->nombre;
-    	nombre = nullptr;
-    	delete this->num_serie;
-    	num_serie = nullptr;
-    	delete this->tipo_juego;
-    	tipo_juego = nullptr;
     	delete this->rate_category;
     	rate_category = nullptr;
     }
@@ -81,12 +72,6 @@ public:
         this->num_niveles = new int(num_niveles);
     }
     ~Aprendizaje(){
-    	delete this->nombre;
-    	nombre = nullptr;
-    	delete this->num_serie;
-    	num_serie = nullptr;
-    	delete this->tipo_juego;
-    	tipo_juego = nullptr;
     	delete this->num_niveles;
     	num_niveles = nullptr;
     }

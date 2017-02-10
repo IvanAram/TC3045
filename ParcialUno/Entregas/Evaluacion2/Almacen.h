@@ -20,7 +20,6 @@ public:
         current_position = 0;
     }
     ~Almacen(){
-    	//for(int i = 0; i < size; i++) delete array[i];
     	delete[] array;
     }
     void add(Producto* p){
@@ -33,7 +32,7 @@ public:
         return;
     }
     void eliminar(Producto* p){
-    	
+
     }
     void print(){
         for(int i=0; i<current_position; i++) array[i]->print();
