@@ -18,7 +18,7 @@ int main()
 
     delete gf;
     
-	//delete v1;
+	delete v1;
 	delete v3;
 	v3 = nullptr;
 }
